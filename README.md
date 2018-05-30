@@ -38,6 +38,15 @@
 表題通り、割と現場思考で非常にためになる  
 [実践Ruby on Rails4](https://www.amazon.co.jp/%E5%AE%9F%E8%B7%B5Ruby-Rails-4-%E7%8F%BE%E5%A0%B4%E3%81%AE%E3%83%97%E3%83%AD%E3%81%8B%E3%82%89%E5%AD%A6%E3%81%B6%E6%9C%AC%E6%A0%BCWeb%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E9%BB%92%E7%94%B0/dp/4844335928/ref=pd_sbs_14_9?_encoding=UTF8&pd_rd_i=4844335928&pd_rd_r=a9eacb77-6251-11e8-9f05-4bb9f3f6a434&pd_rd_w=EqWCY&pd_rd_wg=lzr91&pf_rd_i=desktop-dp-sims&pf_rd_m=AN1VRQENFRJN5&pf_rd_p=5805929820760247504&pf_rd_r=44H1HSXG4W82JJHC72F8&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&psc=1&refRID=44H1HSXG4W82JJHC72F8)
 
+### Docker入門
+
+#### やること
+ドットインストールを見て理解する  
+[Docker入門 (全11回) - プログラミングならドットインストール](https://dotinstall.com/lessons/basic_docker)
+
+以下の記事を熟読する  
+[今日からはじめるDocker - コンテナー仮想化の必要性を理解して、まず開発環境に導入してみよう！](https://employment.en-japan.com/engineerhub/entry/2017/09/28/110000)
+
 
 ## アルゴリズム
 
