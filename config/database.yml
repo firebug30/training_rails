@@ -1,0 +1,24 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+development:
+  <<: *default
+  host: <%= ENV['MYSQL_HOST'] || 'db' %>
+  database: <%= ENV['MYSQL_DB'] || 'vemdb' %>
+  username: <%= ENV['MYSQL_ROOT_USER'] || 'root' %>
+  password: <%= ENV['MYSQL_ROOT_PASSWORD'] || 'root' %>
+
+test:
+  <<: *default
+  host: <%= ENV['MYSQL_HOST'] || 'db' %>
+  username: <%= ENV['MYSQL_ROOT_USER'] || 'root' %>
+  password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
+  database: <%= ENV['MYSQL_DB'] || 'vemdb_test' %>
+
+production:
+  <<: *default
+  host: <%= ENV['MYSQL_HOST'] %>
+  database: vemdb
+  username: <%= ENV['MYSQL_ROOT_USER'] %>
+  password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>

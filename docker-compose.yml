@@ -1,0 +1,31 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.6.27
+    container_name: '30training_db'
+    volumes:
+      - ./docker_volumes/mysql:/var/lib/mysql
+    ports:
+      - '3306:3306'
+    env_file:
+      - .env
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: '30training_app'
+    ports:
+      - '8080:3000'
+    command: sh start.sh
+    env_file:
+      - .env
+    environment:
+      RAILS_ENV: development
+    stdin_open: true
+    volumes:
+      - .:/usr/src/app
+volumes:
+  db:
+    driver: 'local'
+  bundle_install:
+    driver: local
