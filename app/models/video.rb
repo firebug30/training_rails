@@ -10,5 +10,10 @@ class Video < ApplicationRecord
   # ・ http://www.ckazu.info/blog/2013/12/14/delegate_allow_nil/
   delegate :creator, to: :series
   
-  
+  # Railsにおける Enum について
+  # Integerや、Booleanのカラムに対して、列挙型ぽく便利メソッドなどが使えるようになる。
+  # 
+  # [備考]
+  # ・ http://ruby-rails.hatenadiary.com/entry/20150710/1436461745
+  enum status_code: { valid: 1, invalid: 2 }
 end
