@@ -14,10 +14,19 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+/public/assets/*
 !/log/.keep
 !/tmp/.keep
 
-/node_modules
-/yarn-error.log
 
+# Ignore Byebug command history file.
 .byebug_history
+
+docker_volumes/mysql/*
+.DS_Store
+.env
+
+vendor/bundle
+apidocs
+coverage
+
