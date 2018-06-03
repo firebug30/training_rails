@@ -15,5 +15,5 @@ class Video < ApplicationRecord
   # 
   # [備考]
   # ・ http://ruby-rails.hatenadiary.com/entry/20150710/1436461745
-  enum status_code: { valid: 1, invalid: 2 }
+  enum status_code: { visible: 1, invisible: 0 }
 end

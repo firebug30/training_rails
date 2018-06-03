@@ -1,0 +1,12 @@
+<div id="section-contents-inner-video">
+  <div class="section-contents-inner-video-inner">
+    <h1 class="section-contents-error-title"><%= @error.message %></h1>
+    <pre>
+      <code>
+        <% @error.backtrace.each do |line| %>
+          <p><%= line %></p>
+        <% end %>
+      </code>
+    </pre>
+  </div>
+</div>
