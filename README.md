@@ -204,11 +204,11 @@ sudo vim .env
 # Dockerイメージビルド
 docker-compose build
 
-# データベースを初期化 (DB作成・スキーマロード・マイグレーション・初期データ投入)
-docker-compose run app sh db/rebuild.sh
-
 # Dockerコンテナ起動（バックグランド（デーモン）で起動）
 docker-compose up -d
+
+# データベースを初期化 (DB作成・スキーマロード・マイグレーション・初期データ投入)
+docker-compose run app sh db/rebuild.sh
 ```
 
 ### 課題
