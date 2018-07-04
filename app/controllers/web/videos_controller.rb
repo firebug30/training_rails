@@ -1,5 +1,9 @@
 module Web
   class VideosController < Web::BaseController
+    def index
+      @videos = Video.all
+    end
+    
     def show
       @video = Video.find_by(video_id: video_id)
 
