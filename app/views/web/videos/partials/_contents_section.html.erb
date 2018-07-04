@@ -28,11 +28,11 @@
           <ul>
             <li>
               <% video.comments.each do |comment| %>
-              <p><%= comment.user %></p>
+              <p><%= comment.user.nickname %></p>
                 <p><%= comment.content %></p>
               <% end %>
             </li>
           </ul>
-        </div>
+      </div>
   </div>
 </div>

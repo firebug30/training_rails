@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     end
     resources :series, only: [:show]
     resources :creators, only: [:show]
+    resources :users, only: [:show]
   end
 end
