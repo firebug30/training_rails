@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   scope module: :web do
     resources :videos, only: [:show] do 
-      resources :comments, only:[:new, :create]
+        resources :comments, only:[:new, :create]
     end
     resources :series, only: [:show]
     resources :creators, only: [:show]

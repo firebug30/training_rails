@@ -10,6 +10,8 @@ services:
     env_file:
       - .env
   app:
+    tty: true
+    stdin_open: true
     build:
       context: .
       dockerfile: Dockerfile

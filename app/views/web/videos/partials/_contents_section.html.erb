@@ -23,5 +23,16 @@
         </div>
       </div>
     </div>
+    <div class="video-comments">
+        <%= link_to 'コメントする', new_video_comment_path(video) %>
+          <ul>
+            <li>
+              <% video.comments.each do |comment| %>
+              <p><%= comment.user %></p>
+                <p><%= comment.content %></p>
+              <% end %>
+            </li>
+          </ul>
+        </div>
   </div>
 </div>

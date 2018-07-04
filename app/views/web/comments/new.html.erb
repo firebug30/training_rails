@@ -1,0 +1,44 @@
+<%= render partial: 'web/partials/header.html.erb' %>
+<div class="section-contents-inner-video-inner">
+  <%= render partial: 'web/videos/partials/video_player', locals: {
+    video_url: @video.file_url,
+    thumb_url: @video.thumb_url
+  }%>
+  <div class="section-contents-inner-video-inner-detail">
+    <div class="section-contents-inner-video-inner-detail-wrap clearfix">
+      <div class="section-contents-inner-video-inner-detail-title">
+        <p>
+        <%= @video.title %>
+        </p>
+      </div>
+    </div>
+    <div class="section-contents-inner-video-inner-detail-serise clearfix">
+      <div class="section-contents-inner-video-inner-detail-serise-inner">
+        <div class="section-contents-inner-video-inner-detail-serise-l">
+          <div class="section-contents-inner-video-inner-detail-serise-image" style="background-image:url(<%= @video.creator.icon_url %>);"></div>
+        </div>
+        <div class="section-contents-inner-video-inner-detail-serise-r">
+          <div class="section-contents-inner-video-inner-detail-serise-text">
+            <p><%= @video.creator.name %></p>
+          </div>
+        </div>
+        <%= form_for [@video, @comment] do |f| %>
+           <!-- <div style="margin: 8px 0">
+              <%#= f.label :評価, style: {'margin-right' => 8} %>
+              <%#= f.number_field :rate, placeholder: '評価', value: '1', max: '10', min: '1', html: {class: "search__query", style: 'text-align: right;' } %>
+           </div> -->
+           <div style="margin: 8px 0">
+              <%= f.text_area :content, placeholder: '感想', style: 'width: 100%;height: 300px;' %>
+           </div>
+           <div class="row">
+              <div class="col10 push1">
+                <%= button_tag type: "submit", class: "btn btn--block" do %>投稿する<i class="icon-arrow-right"></i>
+                <% end %>
+             </div>
+           </div>
+         <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render partial: 'web/partials/footer.html.erb' %>

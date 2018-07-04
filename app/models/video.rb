@@ -1,5 +1,6 @@
 class Video < ApplicationRecord
   belongs_to :series
+  has_many :comments
 
   # Delegate（移譲）
   # belongs_toは :through が使えないので、Associationでcreatorアクセスはできない。
