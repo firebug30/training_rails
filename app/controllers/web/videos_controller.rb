@@ -2,6 +2,7 @@ module Web
   class VideosController < Web::BaseController
     def index
       @videos = Video.all
+      render layout: 'web/layouts/base'
     end
 
     def show
