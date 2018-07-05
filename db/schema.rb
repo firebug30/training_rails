@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180704074858) do
+ActiveRecord::Schema.define(version: 20180705060009) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "content"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20180704074858) do
     t.datetime "created_at", comment: "登録日時"
     t.datetime "updated_at", comment: "更新日時"
     t.index ["creator_id"], name: "creator_id", unique: true
+  end
+
+  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id", null: false
+    t.integer "video_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "video_id"], name: "index_likes_on_user_id_and_video_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
+    t.index ["video_id"], name: "index_likes_on_video_id"
   end
 
   create_table "series", primary_key: "series_id", id: :integer, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "シリーズテーブル" do |t|

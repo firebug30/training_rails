@@ -1,7 +1,7 @@
 module Web
   class VideosController < Web::BaseController
     def index
-      @videos = Video.all
+      @videos = Video.all.order(created_at: "DESC")
       render layout: 'web/layouts/base'
     end
 

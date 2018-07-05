@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :comments
+  has_many :likes, dependent: :destroy
 
   def after_sign_up_path_for
     '/'
@@ -12,4 +13,5 @@ class User < ApplicationRecord
   def after_sign_out_path_for
     '/'
   end
+
 end
