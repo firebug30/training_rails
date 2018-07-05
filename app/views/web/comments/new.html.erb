@@ -1,5 +1,5 @@
-<%= render partial: 'web/partials/header.html.erb' %>
-<div class="section-contents-inner-video-inner">
+<div id="section-contents-inner-video">
+  <div class="section-contents-inner-video-inner">
   <%= render partial: 'web/videos/partials/video_player', locals: {
     video_url: @video.file_url,
     thumb_url: @video.thumb_url
@@ -41,4 +41,3 @@
       <% end %>
   </div>
 </div>
-<%= render partial: 'web/partials/footer.html.erb' %>

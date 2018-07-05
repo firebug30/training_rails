@@ -3,6 +3,7 @@ module Web
     def show
       @user = current_user
       @comments = current_user.comments
+      render layout: 'web/layouts/base'
     end
   end
 end
