@@ -1,0 +1,62 @@
+<div id="section-contents-inner-video">
+  <div class="section-contents-inner-video-inner">
+    <div class="index-title">
+      <h1>検索結果</h1>
+    </div>
+    <ul>
+      <% videos.each do |video| %>
+        <li>
+          <% if video.status_code == "visible" %>
+            <%= render partial: 'web/videos/partials/video_player', locals: {
+              video_url: video.file_url,
+              thumb_url: video.thumb_url
+            }%>
+            <div class="section-contents-inner-video-inner-detail">
+              <div class="section-contents-inner-video-inner-detail-wrap clearfix">
+                <div class="section-contents-inner-video-inner-detail-title">
+                  <p>
+                    <a href="/videos/<%= video.id %>" class=""><%= video.title %></a>
+                    <% if user_signed_in? %>
+                      <% if video.favorite?(current_user.id) %>
+                        <%= button_to video_like_path(current_user.id, video.id), method: :delete, id: "like-button", remote: true do %>
+                          <%= image_tag("icon_red_heart.svg") %>
+                          <span>
+                            <%= video.likes_count %>
+                          </span>
+                        <% end %>
+                      <% else %>
+                        <%= button_to video_likes_path(video), id: "like-button", remote: true do %>
+                          <%= image_tag("icon_heart.svg") %>
+                          <span>
+                            <%= video.likes_count %>
+                          </span>
+                        <% end %>
+                      <% end %>
+                    <% else %>
+                      <%= image_tag("icon_heart.svg") %>
+                        <span>
+                          <%= video.likes_count %>
+                        </span>
+                    <% end %>
+                  </p>
+                </div>
+              </div>
+              <div class="section-contents-inner-video-inner-detail-serise clearfix">
+                <div class="section-contents-inner-video-inner-detail-serise-inner">
+                  <div class="section-contents-inner-video-inner-detail-serise-l">
+                    <div class="section-contents-inner-video-inner-detail-serise-image" style="background-image:url(<%= video.creator.icon_url %>);"></div>
+                  </div>
+                  <div class="section-contents-inner-video-inner-detail-serise-r">
+                    <div class="section-contents-inner-video-inner-detail-serise-text">
+                      <p><%= video.creator.name %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

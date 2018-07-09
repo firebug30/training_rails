@@ -6,7 +6,6 @@ module Web
     end
 
     def show
-      # binding.pry
       @video = Video.find_by(video_id: video_id)
 
       # エラーハンドリングに関して
