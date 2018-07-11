@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <% if video.favorite?(current_user) %>
+    <%= link_to video_like_path(video, video.favorite(current_user)), method: :delete, class: 'heart-icon', remote true do %>
+  <% else %>
+    <%= link_to video_likes_path(video), method: :post, class: 'empty-heart' %>
+  <% end %>
+<% else %>
+    <%= link_to %>
+<% end %>
