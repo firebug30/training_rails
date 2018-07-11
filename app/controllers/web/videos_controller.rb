@@ -1,7 +1,14 @@
 module Web
   class VideosController < Web::BaseController
     def index
-      @videos = Video.all.order(created_at: "DESC")
+      @q = Video.ransack(params[:q])
+      @videos = @q.result.order(created_at: "DESC")
+      render layout: 'web/layouts/base'
+    end
+
+    def search
+      @q = Video.search(search_params)
+      @videos = @q.result(distinct: true).order(created_at: "DESC")
       render layout: 'web/layouts/base'
     end
 
@@ -22,8 +29,15 @@ module Web
       render layout: 'web/layouts/base'
     end
 
+
     def video_id
       params.require(:id)
+    end
+
+    private
+
+    def search_params
+      params.require(:q).permit(:title_cont)
     end
   end
 end

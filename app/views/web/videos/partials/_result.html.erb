@@ -1,5 +1,13 @@
 <div id="section-contents-inner-video">
   <div class="section-contents-inner-video-inner">
+    <%= search_form_for(@q, url: search_path, class: 'well') do |f| %>
+      <div class="form-group">
+        <%= f.label :title_cont, 'タイトル' %>
+        <%= f.text_field :title_cont, class: 'form-control' %>
+      </div>
+    <%= f.submit '検索', class: 'btn btn-default' %>
+    <% end %>
+
     <div class="index-title">
       <h1>検索結果</h1>
     </div>
@@ -16,28 +24,6 @@
                 <div class="section-contents-inner-video-inner-detail-title">
                   <p>
                     <a href="/videos/<%= video.id %>" class=""><%= video.title %></a>
-                    <% if user_signed_in? %>
-                      <% if video.favorite?(current_user.id) %>
-                        <%= button_to video_like_path(current_user.id, video.id), method: :delete, id: "like-button", remote: true do %>
-                          <%= image_tag("icon_red_heart.svg") %>
-                          <span>
-                            <%= video.likes_count %>
-                          </span>
-                        <% end %>
-                      <% else %>
-                        <%= button_to video_likes_path(video), id: "like-button", remote: true do %>
-                          <%= image_tag("icon_heart.svg") %>
-                          <span>
-                            <%= video.likes_count %>
-                          </span>
-                        <% end %>
-                      <% end %>
-                    <% else %>
-                      <%= image_tag("icon_heart.svg") %>
-                        <span>
-                          <%= video.likes_count %>
-                        </span>
-                    <% end %>
                   </p>
                 </div>
               </div>

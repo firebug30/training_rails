@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  get '/', to: 'web/videos#index'
+  root to: 'web/videos#index'
 
   scope module: :web do
+    get 'search', to: 'videos#search'
     resources :videos, only: [:show] do
         resources :comments, only:[:new, :create]
         resources :likes, only:[:create, :destroy]

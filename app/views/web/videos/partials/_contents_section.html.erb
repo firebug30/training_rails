@@ -26,12 +26,12 @@
     <div class="video-comments">
         <%= link_to 'コメントする', new_video_comment_path(video) %>
           <ul>
-            <li>
-              <% video.comments.each do |comment| %>
-              <p><%= comment.user.nickname %></p>
+            <% video.comments.each do |comment| %>
+              <li>
+                <!-- <p><%#= comment.user.nickname %></p> -->
                 <p><%= comment.content %></p>
-              <% end %>
-            </li>
+              </li>
+            <% end %>
           </ul>
       </div>
   </div>

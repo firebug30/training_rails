@@ -18,7 +18,7 @@ module Web
 
     private
     def comment_params
-      params.require(:comment).permit(:content).merge(user_id: current_user.id, video_id: params[:video_id])
+      params.require(:comment).permit(:content).merge(video_id: params[:video_id])
     end
 
   end
