@@ -1,13 +1,8 @@
 <div id="section-contents-inner-video">
   <div class="section-contents-inner-video-inner">
-    <%= search_form_for(@q, url: search_path, class: 'well') do |f| %>
-      <div class="form-group">
-        <%= f.label :title_cont, 'タイトル' %>
-        <%= f.text_field :title_cont, class: 'form-control' %>
-      </div>
-    <%= f.submit '検索', class: 'btn btn-default' %>
-    <% end %>
-
+    <div class="search-bar">
+      <%= render partial: 'web/videos/partials/search_bar', locals: {videos: @videos }%>
+    </div>
     <div class="index-title">
       <h1>検索結果</h1>
     </div>

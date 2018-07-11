@@ -28,7 +28,7 @@
           <ul>
             <% video.comments.each do |comment| %>
               <li>
-                <!-- <p><%#= comment.user.nickname %></p> -->
+                <p><%= comment.user.nickname %></p>
                 <p><%= comment.content %></p>
               </li>
             <% end %>
