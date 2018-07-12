@@ -2,7 +2,7 @@ module Web
   class VideosController < Web::BaseController
     def index
       @q = Video.ransack(params[:q])
-      @videos = @q.result.order(created_at: "DESC")
+      @videos = @q.result(distinct: true).order(created_at: "DESC")
       render layout: 'web/layouts/base'
     end
 

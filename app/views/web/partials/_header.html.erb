@@ -1,21 +1,23 @@
 <header id="section-header">
   <div class="section-header-inner">
     <div class="section-header-inner-head clearfix">
-      <div class="section-header-inner-head-logo">
-         <h1><a href="/">30</a></h1>
-      </div>
       <div class="menu">
         <ul class="nav">
           <%= image_tag("align-justify-solid.svg") %>
-          <% if user_signed_in? %>
-            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-            <li><%= link_to 'マイページ', user_path(current_user) %></li>
-          <% else %>
-            <li><%= link_to '新規登録', new_user_registration_path %></li>
-            <li><%= link_to 'ログイン', new_user_session_path %></li>
-          <% end %>
+          <div clsss="menu-bar">
+            <% if user_signed_in? %>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to 'マイページ', user_path(current_user) %></li>
+            <% else %>
+              <li><%= link_to '新規登録', new_user_registration_path %></li>
+              <li><%= link_to 'ログイン', new_user_session_path %></li>
+            <% end %>
+          </div>
         </ul>
       </div>
-    </div>
+      <div class="section-header-inner-head-logo">
+         <h1><a href="/">30</a></h1>
+      </div>
+      </div>
   </div>
 </header><!-- /#section-header -->

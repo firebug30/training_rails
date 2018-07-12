@@ -15,6 +15,7 @@
               video_url: video.file_url,
               thumb_url: video.thumb_url
             }%>
+            <%= render partial: 'web/videos/partials/like', locals: {video: video, user: current_user} %>
             <div class="section-contents-inner-video-inner-detail">
               <div class="section-contents-inner-video-inner-detail-wrap clearfix">
                 <div class="section-contents-inner-video-inner-detail-title">

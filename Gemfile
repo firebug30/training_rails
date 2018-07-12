@@ -11,6 +11,8 @@ gem 'turbolinks', '~> 5'
 gem 'nokogiri'
 gem 'devise'
 gem 'ransack'
+gem 'font-awesome-rails'
+gem 'devise-bootstrap-views'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

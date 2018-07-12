@@ -1,9 +1,13 @@
 <% if user_signed_in? %>
-  <% if video.favorite?(current_user) %>
-    <%= link_to video_like_path(video, video.favorite(current_user)), method: :delete, class: 'heart-icon', remote true do %>
+  <% if current_user.favorite?(video) %>
+    <%= button_to video_like_path(video, user_id: current_user, video_id: video.id), method: :delete, id: "like-button", remote: true do %>
+      <%= image_tag("heart-regular.svg") %>
+      <% end %>
   <% else %>
-    <%= link_to video_likes_path(video), method: :post, class: 'empty-heart' %>
+    <%= button_to video_likes_path(video, user: current_user), method: :post, id: "like-button", remote: true do%>
+    <%= image_tag("heart-solid.svg") %>
+    <% end %>
   <% end %>
 <% else %>
-    <%= link_to %>
+    <%= button_to 'ログイン画面へ', new_user_session_path %>
 <% end %>

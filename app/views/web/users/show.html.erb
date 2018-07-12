@@ -10,14 +10,14 @@
       <div class="section-contents-inner-video-inner">
           <ul class="user_page-contents">
           <% @comments.each do |comment| %>
+            <li>
             <%= render partial: 'web/videos/partials/video_player', locals: {
                   video_url: comment.video.file_url,
                   thumb_url: comment.video.thumb_url
                 }%>
+                <%= render partial: 'web/videos/partials/like', locals: {video: comment.video} %>
               <div class="meta">
-                <header>
-                  <div class="title"><%= comment.video.title %></div>
-                </header>
+                  <div class="meta-title"><%= comment.video.title %></div>
                 <div class="user_review"><%= comment.content %></div>
               </div>
             </li>

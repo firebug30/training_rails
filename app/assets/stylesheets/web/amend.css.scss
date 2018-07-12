@@ -45,113 +45,25 @@
 
   .section-header-inner-head {
     padding: 2% 5% !important;
+  }
 
-    .menu{
-      width: 32px;
+  .menu {
+      display: flex;
+      position: relative;
+      margin-right: 16px;
+      cursor: pointer;
+      user-select: none;
+      outline: none;
+      float: left;
       height: 32px;
-      float: right;
+      width: 32px;
+    }
 
-    .nav{
-      .nav li {
-        position: relative;
-        list-style: none;
-      }
-    .nav li a {
-      display: block;
-      width: 150px;
-      height: 40px;
-      text-align: center;
-      color: #fff;
-      font-size: 14px;
-      line-height: 2.8;
-      background: #9fb7d4;
-      transition: 0.5s;
-      text-decoration: none;
-      border-right: 1px solid #eee;
-      box-sizing: border-box;
-    }
-    .nav > li:hover > a {/*layer-1*/
-      color: orange;
-      background: #afc6e2;
-    }
-    .nav > li li:hover > a {/*layer-2*/
-      color: olive;
-      background: #afc6e2;
-    }
-    .nav li ul {
-      top: 40px;
-      left: -40px;
-      position: absolute;
-    }
-    .nav li ul li {
-      overflow: hidden;
-      height: 0;
-      transition: 0.2s;
-    }
-    .nav li ul li a {
-      border-top: 1px solid #eee;
-    }
-    .nav li:hover > ul > li {
-      overflow: visible;
-      height: 40px;
-    }
-      .nav li ul li ul {
-        top: 0;
-        left: 110px;
-      }
-      .nav li ul li ul:before {/*layer-2▷*/
-        position: absolute;
-        content: "";
-        top: 15px;
-        left: 30px;
-        border: 5px solid transparent;
-        border-left: 5px solid #fff;
-      }
-      .nav li ul li ul li:hover > a {/*layer-3*/
-        color: pink;
-        background: #afc6e2;
-      }
-      .nav li ul li ul.left {
-        top: 0;
-        left: -190px;
-      }
-      .nav li ul li ul.left:before,/*layer-2-left▷*/
-      .nav li ul li ul li ul.left:before {/*layer-3-left▷*/
-        position: absolute;
-        content: "";
-        top: 15px;
-        left: 190px;
-        border: 5px solid transparent;
-        border-right: 5px solid #fff;
-      }
-      .nav li ul li ul.left li:hover > a {/*layer-2-left*/
-        color: pink;
-        background: #afc6e2;
-      }
-      .nav li ul li ul li ul.left li:hover > a {/*layer-3-left*/
-        color: purple;
-        background: #afc6e2;
-      }
-
-      .content {
-        width: 750px;
-        height: 200px;
-        background: #eee;
-        margin: 0 auto;
-        padding: 10px;
-        text-align: left;
-        box-sizing: border-box;
-      }
-    }
-   }
-}
-
-    
     .section-header-inner-head-logo {
-      float: left !important;
+      
       width: 150px !important;
       margin: auto;
-  
+
       h1 {
         width: initial !important;
       }
@@ -244,6 +156,10 @@
   }
 }
 
+.comment{
+  float: right;
+}
+
 @media only screen and (min-width: 781px) {
   .section-contents-inner-video-inner-detail-serise {
     margin: 2% 5% 5% !important;
@@ -269,6 +185,7 @@
 
   a{
   padding: 0 5% 0;
+  width: 100%;
   }
 
   h2{
@@ -284,37 +201,66 @@
   height: 50px;
 
   .form-control {
-  height: 50px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  border-radius:2px 0 0 2px;
-  border-right:none;
-  border:solid 3px #eaeaea;
-  outline: 0;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 10px 0 0 10px;
+    border-right:none;
+    border:solid 3px #eaeaea;
+    outline: 0;
+    font-size: 20px;
   }
 
   .btn{
-  padding: 0;
-  width: 80px;
-  height: 58px;
-  position: absolute;
-  left: 100%;
-  top: 0;
-  border-radius:0 2px 2px 0;
-  background:#7fbfff;
-  color:#fff;
-  border:solid 3px #eaeaea;
-  border-left:none;
-  font-weight:bold;
-  font-size:16px;
-  outline: 0;
+    padding: 0;
+    width: 80px;
+    height: 58px;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    border-radius:0 10px 10px 0;
+    background: #ff8b7f;
+    color:#fff;
+    border:solid 3px #eaeaea;
+    border-left:none;
+    font-weight:bold;
+    font-size:16px;
+    outline: 0;
   }
 
   .btn:hover{
-  background:#eaeaea;
-  color:#7fbfff;
+    background:#eaeaea;
+    color: #ff8b7f;
   }
 }
 
+.video-comments{
+   .clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+  }
+
+  a{
+    float: right;
+  }
+
+}
+
+.meta{
+  padding: 20px;
+  .meta-title{
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .user_review{
+    padding-left: 10px;
+  }
+}
+
+.form-group{
+
+}
