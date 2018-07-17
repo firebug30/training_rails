@@ -10,6 +10,11 @@ Rails.application.routes.draw do
     end
     resources :series, only: [:show]
     resources :creators, only: [:show]
-    resources :users, only: [:show]
+    resources :users, only: [:show] do
+      member do
+        get 'comments'
+        get 'likes'
+      end
+    end
   end
 end

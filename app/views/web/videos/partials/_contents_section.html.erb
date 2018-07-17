@@ -6,9 +6,8 @@
   <div class="section-contents-inner-video-inner-detail">
     <div class="section-contents-inner-video-inner-detail-wrap clearfix">
       <div class="section-contents-inner-video-inner-detail-title">
-        <p>
-        <%= video.title %>
-        </p>
+          <%= render partial: 'web/videos/partials/like', locals: {video: video, videos: @videos, likes: @likes, like: @like, user: current_user} %>
+          <a href="/videos/<%= video.id %>" class=""><%= video.title %></a>
       </div>
     </div>
     <div class="section-contents-inner-video-inner-detail-serise clearfix">
@@ -24,7 +23,7 @@
       </div>
     </div>
     <div class="comment">
-      <%= link_to 'コメントする', new_video_comment_path(video) %>
+      <%= link_to 'コメントする', new_video_comment_path(video), class: 'btn btn-default' %>
     </div>
     <div class="video-comments clearfix">
           <ul>

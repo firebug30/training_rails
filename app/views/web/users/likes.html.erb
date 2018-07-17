@@ -13,18 +13,17 @@
     <div id="section-contents-inner-video">
       <div class="section-contents-inner-video-inner">
           <ul class="user_page-contents">
-          <% @comments.each do |comment| %>
+          <% @likes.each do |like| %>
             <li>
             <%= render partial: 'web/videos/partials/video_player', locals: {
-                  video_url: comment.video.file_url,
-                  thumb_url: comment.video.thumb_url
+                  video_url: like.video.file_url,
+                  thumb_url: like.video.thumb_url
                 }%>
               <div class="meta">
                   <div class="meta-title">
-                    <%= comment.video.title %>
-                    <%= render partial: 'web/videos/partials/like', locals: {video: comment.video} %>
+                    <%= like.video.title %>
+                    <%= render partial: 'web/videos/partials/like', locals: {video: like.video} %>
                   </div>
-                <div class="user_review"><%= comment.content %></div>
               </div>
             </li>
             <% end %>

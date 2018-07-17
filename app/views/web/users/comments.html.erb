@@ -4,7 +4,7 @@
       <h2><%= @user.nickname %></h2>
     <div class="navbar">
       <ul>
-        <li><%= link_to 'コメントした動画', comments_user_path(@user) %></li>
+        <li><%= link_to 'コメントした動画', user_path(@user) %></li>
         <li><%= link_to 'いいねした動画', likes_user_path(@user) %></li>
       </ul>
     </div>
